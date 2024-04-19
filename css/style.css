@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+
+:root {
+  --bg1: #1f1b35;
+  --bg2: #261d46;
+  --bg3: #472b68;
+  --bg4: #6e3d85;
+  --font1: "Archivo Black", sans-serif;
+  --font2: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --accent1: #8ad5fd;
+  --accent2: #ee89fe;
+  --accent1t: #8ad5fd36;
+  --accent2t: #ee89fe36;
+}
+
+/* presets */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  color: #ffffff;
+  scroll-behavior: smooth;
+  background-color: var(--bg1);
+  font-family: var(--font1);
+}
+
+*::-webkit-scrollbar {
+  width: 15px;
+  background-color: var(--bg4);
+  border-radius: 20px;
+}
+*::-webkit-scrollbar-thumb {
+  border: 3px solid var(--bg4);
+  border-radius: 20px;
+  background: linear-gradient(-65deg, var(--accent1), var(--accent2));
+}
+
+.container {
+  margin-inline: 4vw;
+  height: 100%;
+}
+
+/* header */
+
+header nav {
+  background-color: var(--bg1);
+  height: 60px;
+}
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav h1 {
+  font-size: 2rem;
+  text-shadow: -1px -1px 7px var(--accent2), 2px 2px 15px var(--accent1);
+}
+nav h1 span {
+  color: var(--accent2);
+}
+nav strong {
+  font-family: var(--font2);
+  font-size: 1.3rem;
+}
+
+/* sections */
+
+main section {
+  background-color: var(--bg2);
+  height: calc(100vh - 60px);
+}
+.section2 {
+  background-color: var(--bg1);
+}
+
+section .container {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 20px;
+}
+
+/* project list  */
+
+.project-list {
+  background: linear-gradient(-65deg, var(--accent1t), var(--accent2t));
+  width: 23%;
+  border-radius: 15px;
+  padding: 5px;
+  overflow: hidden;
+}
+.project-list h2 {
+  text-align: center;
+  margin: 10px;
+}
+.project-list ul {
+  height: calc(100% - 55px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.project-list .item {
+  list-style: none;
+  background-color: var(--bg2);
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  margin: 10px;
+}
+.project-list .item:hover {
+  scale: 0.93;
+  background-color: var(--bg1);
+}
+.item.active {
+  background: linear-gradient(170deg, var(--accent1), var(--accent2));
+  color: var(--bg2);
+  border: 1px solid var(--bg1);
+}
+
+/* display  */
+
+.display {
+  /* background: #0f03; */
+  width: 60%;
+}
+.more-btn {
+  text-decoration: none;
+  background: linear-gradient(-65deg, var(--accent1), var(--accent2));
+  width: 11%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.more-btn h1 {
+  text-transform: uppercase;
+  font-size: 3.5vw;
+  rotate: 90deg;
+  transform: translatex(60px) scaleY(1.1);
+  text-wrap: nowrap;
+  color: var(--bg2);
+}
+.section2 .more-btn h1 {
+  rotate: -90deg;
+  transform: translatex(-270%) scaleY(1.1);
+}
+
+/* footer */
+
+footer {
+  background-color: var(--bg2);
+  height: 60px;
+}
