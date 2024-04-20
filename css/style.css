@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
 
 :root {
-  --bg1: #1f1b35;
-  --bg2: #261d46;
-  --bg3: #472b68;
-  --bg4: #6e3d85;
+  --primary-txt-clr: #ffffff;
+  --secondary-txt-clr: #ccccccf0;
+  --primary-bg: #343448;
+  --secondary-bg: #1b1b2c;
+  --tertiary-bg: #010112;
+  --bg1: #010112;
+  --bg2: #1b1b2c;
+  --bg3: #343448;
+  --bg4: #343448;
   --font1: "Archivo Black", sans-serif;
   --font2: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -58,6 +63,7 @@ nav .container {
 }
 nav h1 {
   font-size: 2rem;
+  font-weight: 900;
   text-shadow: -1px -1px 7px var(--accent1), 2px 2px 15px var(--accent2);
 }
 nav h1 span {
@@ -133,7 +139,7 @@ section .container {
   border: 1px solid var(--accent1);
   border-right: 10px solid var(--accent1);
   transform-style: preserve-3d;
-  border-radius: 15px;
+  border-radius: 20px;
   width: 100%;
   height: 27vw;
   transform: rotateY(-15deg) translate(-5%, 6%);
@@ -150,6 +156,20 @@ section .container {
   height: 100%;
 }
 
+.details {
+  margin: 25px 10px;
+}
+.details h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(170deg, var(--accent1), var(--accent2));
+  color: transparent;
+  background-clip: text;
+  width: fit-content;
+  -webkit-text-stroke: 1px white;
+}
+
 /* more-btn */
 
 .more-btn {
@@ -162,6 +182,7 @@ section .container {
 .more-btn h1 {
   text-transform: uppercase;
   font-size: 3.5vw;
+  font-weight: 900;
   rotate: 90deg;
   transform: translatex(60px) scaleY(1.1);
   text-wrap: nowrap;
