@@ -146,9 +146,9 @@ section .container {
   overflow: hidden;
 }
 .frame-con {
-  height: 108vh;
+  height: 51vw;
   width: 100vw;
-  scale: 53%;
+  scale: 52.7%;
   transform-origin: 0 0;
 }
 .frame-con iframe {
@@ -157,7 +157,14 @@ section .container {
 }
 
 .details {
-  margin: 25px 10px;
+  margin: 25px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
 }
 .details h1 {
   font-size: 3rem;
@@ -168,6 +175,31 @@ section .container {
   background-clip: text;
   width: fit-content;
   -webkit-text-stroke: 1px white;
+  padding-bottom: 5px;
+}
+.details .btns {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-left: auto;
+}
+.details .btn {
+  border-radius: 10px;
+  padding: 7px 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: var(--bg2);
+  background-color: rgb(25, 201, 63);
+}
+.details .btn:nth-child(2) {
+  background: linear-gradient(170deg, var(--accent1), var(--accent2));
+}
+.details .text {
+  margin-top: 20px;
 }
 
 /* more-btn */
@@ -184,7 +216,7 @@ section .container {
   font-size: 3.5vw;
   font-weight: 900;
   rotate: 90deg;
-  transform: translatex(60px) scaleY(1.1);
+  transform: translatex(50px) scaleY(1.1);
   text-wrap: nowrap;
   color: var(--bg2);
 }
