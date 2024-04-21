@@ -208,7 +208,7 @@ section .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
   color: var(--bg2);
   background-color: rgb(25, 201, 63);
 }
@@ -221,7 +221,7 @@ section .container {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   margin-block: 10px;
 }
 .section2 .details .read-btn {
@@ -260,4 +260,23 @@ section .container {
 footer {
   background-color: var(--bg1);
   height: 60px;
+}
+
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer strong span {
+  background: linear-gradient(170deg, var(--accent1), var(--accent2));
+  color: #ffffff50;
+  background-clip: text;
+  font-size: 1.3rem;
+  /* letter-spacing: 1px; */
+}
+footer .socials a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 1.2rem;
 }
