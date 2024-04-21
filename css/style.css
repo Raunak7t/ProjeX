@@ -1,15 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
 
 :root {
-  --primary-txt-clr: #ffffff;
-  --secondary-txt-clr: #ccccccf0;
-  --primary-bg: #343448;
-  --secondary-bg: #1b1b2c;
-  --tertiary-bg: #010112;
   --bg1: #010112;
   --bg2: #1b1b2c;
   --bg3: #343448;
-  --bg4: #343448;
   --font1: "Archivo Black", sans-serif;
   --font2: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -36,11 +30,11 @@ body {
 
 *::-webkit-scrollbar {
   width: 12px;
-  background-color: var(--bg4);
+  background-color: var(--bg3);
   border-radius: 20px;
 }
 *::-webkit-scrollbar-thumb {
-  border: 3px solid var(--bg4);
+  border: 3px solid var(--bg3);
   border-radius: 20px;
   background: linear-gradient(-93deg, var(--accent1), var(--accent2));
 }
@@ -80,14 +74,25 @@ main section {
   background-color: var(--bg2);
   height: calc(100vh - 60px);
 }
-.section2 {
-  background-color: var(--bg1);
-}
-
 section .container {
   display: flex;
   justify-content: space-between;
   padding-block: 20px;
+}
+
+.partition {
+  background-color: var(--bg1);
+  height: fit-content;
+  text-align: center;
+  padding-block: 70px;
+}
+.partition h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(170deg, var(--accent1), var(--accent2));
+  color: transparent;
+  background-clip: text;
 }
 
 /* project list  */
@@ -112,7 +117,7 @@ section .container {
   list-style: none;
   background-color: var(--bg2);
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 15px 20px;
   cursor: pointer;
   transition: all ease 0.3s;
   margin: 10px;
@@ -142,13 +147,16 @@ section .container {
   border-radius: 20px;
   width: 100%;
   height: 27vw;
-  transform: rotateY(-15deg) translate(-5%, 6%);
+  transform: rotateY(-15deg) translate(-5%, 7%);
   overflow: hidden;
 }
+.section2 .disp-con {
+  transform: rotateY(15deg) translate(5%, 7%);
+}
 .frame-con {
-  height: 51vw;
+  height: 50.8vw;
   width: 100vw;
-  scale: 52.7%;
+  scale: 52.9%;
   transform-origin: 0 0;
 }
 .frame-con iframe {
@@ -166,6 +174,9 @@ section .container {
   align-items: end;
   flex-wrap: wrap;
 }
+.section2 .top {
+  flex-wrap: wrap-reverse;
+}
 .details h1 {
   font-size: 3rem;
   font-weight: 900;
@@ -177,12 +188,18 @@ section .container {
   -webkit-text-stroke: 1px white;
   padding-bottom: 5px;
 }
+.section2 .details h1 {
+  margin-left: auto;
+}
 .details .btns {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
   margin-left: auto;
+}
+.section2 .details .btns {
+  margin-left: initial;
 }
 .details .btn {
   border-radius: 10px;
@@ -198,8 +215,21 @@ section .container {
 .details .btn:nth-child(2) {
   background: linear-gradient(170deg, var(--accent1), var(--accent2));
 }
+.details .read-btn {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-block: 10px;
+}
+.section2 .details .read-btn {
+  justify-content: end;
+}
 .details .text {
-  margin-top: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 /* more-btn */
@@ -228,6 +258,6 @@ section .container {
 /* footer */
 
 footer {
-  background-color: var(--bg2);
+  background-color: var(--bg1);
   height: 60px;
 }
