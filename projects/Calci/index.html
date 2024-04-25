@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+	
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body {
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: linear-gradient(45deg , #334, #778)
+	}
+	
+	.calci {
+		border-radius: 25px;
+		box-shadow: 5px -5px 10px #fff6, -3px 3px 13px #000;
+		padding: 1rem;
+		background: linear-gradient(45deg , #112, #556)
+	
+	}
+	.display {
+		display: flex;
+		
+		justify-content: flex-end;
+	}
+	.display input {
+		flex: 1;
+		height: 4rem;
+		width: 1rem;
+		text-align: right;
+		font-size: 3rem;
+		color: white;
+		margin: 1rem;
+		padding: 8px;
+		background: transparent;
+		border-radius: 5px;
+		border: none;
+		box-shadow: -2px 2px 5px #000 inset, 2px -2px 5px #fff6 inset;
+	}
+	
+	input[type="button"] {
+		width: 3rem;
+		height: 3rem;
+		margin: 0.5rem;
+		color: white;
+		font-size: 1.5rem;
+		border-radius: 1rem;
+		border: none;
+		background: transparent;
+		box-shadow: -2px 2px 5px #000, 2px -2px 5px #fff6;
+		transition: all 0.1s;
+	}
+	input[type="button"]:active {
+		box-shadow: -.7px .7px 5px #000, .7px -.7px 5px #fff7;
+	}
+	input[value="="] {
+		width: 7rem;
+	}
+	input.operator {
+		color: aqua;
+	}
+</style>
+</head>
+<body>
+	<div class="calci">
+		<form>
+			<div class="display">
+				<input type="text" placeholder="0" name="display">
+			</div>
+			<div>
+				<input type="button" value="AC"  onclick="display.value=''" class="operator">
+				<input type="button" value="DEL"  onclick="display.value=display.value.toString().slice(0,-1)" class="operator">
+				<input type="button" value="/"  onclick="display.value+='/'" class="operator">
+				<input type="button" value="*"  onclick="display.value+='*'" class="operator">
+			</div>
+			<div>
+				<input type="button" value="7"  onclick="display.value+='7'">
+				<input type="button" value="8"  onclick="display.value+='8'">
+				<input type="button" value="9"  onclick="display.value+='9'">
+				<input type="button" value="-"  onclick="display.value+='-'" class="operator">
+			</div>
+			<div>
+				<input type="button" value="4"  onclick="display.value+='4'">
+				<input type="button" value="5"  onclick="display.value+='5'">
+				<input type="button" value="6"  onclick="display.value+='6'">
+				<input type="button" value="+"  onclick="display.value+='+'" class="operator">
+			</div>
+			<div>
+				<input type="button" value="1"  onclick="display.value+='1'">
+				<input type="button" value="2"  onclick="display.value+='2'">
+				<input type="button" value="3"  onclick="display.value+='3'">
+				<input type="button" value="."  onclick="display.value+='.'" class="operator">
+			</div>
+			<div>
+				<input type="button" value="00"  onclick="display.value+='00'">
+				<input type="button" value="0"  onclick="display.value+='0'">
+				<input type="button" value="="  onclick="display.value=eval(display.value)" class="operator">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
