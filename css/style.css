@@ -143,6 +143,9 @@ section .container {
   color: var(--bg2);
   border: 1px solid var(--bg1);
 }
+.item.active:hover {
+  scale: 1;
+}
 
 /* display  */
 
