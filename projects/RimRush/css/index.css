@@ -1,21 +1,22 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html, body{
+html,
+body {
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
-#main{
+#main {
   height: 100vh;
   width: 100vw;
   background: linear-gradient(to top left, #335, #112);
   overflow: hidden;
   position: relative;
 }
-#msg{
+#msg {
   z-index: 10;
   position: absolute;
   top: 50%;
@@ -25,18 +26,17 @@ html, body{
   color: #fff;
   white-space: nowrap;
 }
-.char-img{
+.char-img {
   width: 20vmin;
   height: 20vmin;
   border: 3px solid #fffe;
   border-radius: 10px;
-  margin: 1rem .2rem 2rem;
-  
+  margin: 1rem 0.2rem 2rem;
 }
-.hidden{
+.hidden {
   display: none;
 }
-#char{
+#char {
   --char-size: 20;
   --char-top: 150;
   height: calc(var(--char-size) * 1vmin);
@@ -44,13 +44,13 @@ html, body{
   position: absolute;
   left: calc(var(--char-size) * 1vmin);
   top: calc(var(--char-top) * 1px);
-  background: url('../assets/hanumanji.png');
+  background: url("../assets/hanumanji.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  transition: top .1s ease, transform .7s ease;
+  transition: top 0.1s ease, transform 0.7s ease;
 }
-.obstacle{
+.obstacle {
   width: calc(var(--obs-width) * 1px);
   background: #f000;
   position: absolute;
@@ -58,18 +58,18 @@ html, body{
   bottom: 0;
   left: calc(var(--obs-left) * 1px);
 }
-.obs-seg{
+.obs-seg {
   position: absolute;
   width: 100%;
   background: #0ffb;
 }
-.obs-up{
+.obs-up {
   top: 0;
   bottom: calc(var(--gap-top) * 1px);
   border-radius: 0% 0% 50% 50%;
   box-shadow: 0px 7px 25px #0ffb;
 }
-.obs-down{
+.obs-down {
   top: calc((100vh - var(--gap-top) * 1px) + calc(var(--gap-height) * 1px));
   bottom: 0;
   border-radius: 50% 50% 0% 0%;
