@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Follow</title>
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      .main {
+        height: 100vh;
+        width: 100vw;
+        background: cornflowerblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card {
+        height: 80vh;
+        width: 60vw;
+        background: #222;
+        border-radius: 1rem;
+        padding: 3%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        perspective: 1000px;
+      }
+      .card:hover {
+        box-shadow: -4px 4px 5px #2229;
+        transform: translate(5px, -5px);
+      }
+      .img-box {
+        width: 47%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: all 1s ease;
+      }
+      .flipped {
+        transform: rotateY(-180deg);
+      }
+      .img-box img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        backface-visibility: hidden;
+      }
+      .img-box::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-shadow: inset 0 0 45px 25px #222, inset 0 0 25px 5px #222;
+      }
+      .img2 {
+        transform: rotateY(180deg);
+      }
+      .dets {
+        width: 47%;
+        text-align: center;
+      }
+      .dets .name {
+        color: #fff;
+        font-size: 4vmax;
+      }
+      .dets .about {
+        color: #fffc;
+        font-size: 2.5vmax;
+        margin-block: 10% 17%;
+      }
+      .dets .btn {
+        background-color: cornflowerblue;
+        border: none;
+        color: #fff;
+        padding: 0.4em 1em;
+        font-size: 2.5vmax;
+        font-weight: 700;
+        border-radius: 0.7em;
+        width: fit-content;
+      }
+      .dets .btn:hover {
+        box-shadow: 0 0 10px cornflowerblue;
+      }
+      @media (orientation: portrait) {
+        .card {
+          height: 60vh;
+          width: 80vw;
+          flex-direction: column;
+          align-items: space-between;
+          padding: 6%;
+        }
+        .img-box {
+          width: 100%;
+          height: 47%;
+        }
+        .dets {
+          width: 100%;
+          height: 47%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="card">
+        <div class="img-box">
+          <img
+            class="img1"
+            src="https://25.media.tumblr.com/60e8f51e1d8ae06f6eb90d74a263d1c3/tumblr_mij280CRff1qe81alo1_500.gif"
+          />
+          <img
+            class="img2"
+            src="https://64.media.tumblr.com/ea257d3b49574b8501eea3a76bd4e06a/tumblr_opu06kiosG1wppsoyo1_500.gif"
+          />
+        </div>
+        <div class="dets">
+          <h1 class="name">Raunak</h1>
+          <h3 class="about">Follow to know more.</h3>
+          <button class="btn f-btn">Follow</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+      var imgBox = document.querySelector(".img-box");
+      var dets = document.querySelector(".dets");
+      var about = document.querySelector(".about");
+      var btns;
+      var followBtn = document.querySelector(".f-btn");
+
+      var unfollowBtn = document.createElement("button");
+      unfollowBtn.classList.add("btn", "u-btn");
+
+      followBtn.addEventListener("click", () => {
+        imgBox.classList.add("flipped");
+        followBtn.innerText = "Following";
+        about.innerText = "I appreciate that you followed ; )";
+        unfollowBtn.innerText = "+";
+        dets.append(unfollowBtn);
+        btns = document.querySelectorAll(".btn");
+        btns.forEach((btn) => {
+          btn.style.backgroundColor = "#fff";
+          btn.style.color = "cornflowerblue";
+        });
+      });
+
+      unfollowBtn.addEventListener("click", () => {
+        followBtn.innerText = "+";
+        if (unfollowBtn.innerText == "Unfollow") {
+          imgBox.classList.remove("flipped");
+          followBtn.innerText = "Follow";
+          about.innerText = "Follow to know more.";
+          unfollowBtn.remove();
+          btns.forEach((btn) => {
+            btn.style.backgroundColor = "cornflowerblue";
+            btn.style.color = "#fff";
+          });
+        }
+        unfollowBtn.innerText = "Unfollow";
+      });
+    </script>
+  </body>
+</html>

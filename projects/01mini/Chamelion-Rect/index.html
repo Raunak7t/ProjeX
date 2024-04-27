@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+      body {
+        background-color: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #rect {
+        width: 70%;
+        height: 70%;
+        border: groove 10px grey;
+        background-color: #fff;
+        box-shadow: 0 0 15px #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        transition: all ease 0.3s;
+        padding: 2px;
+      }
+      .circle-con {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .circle {
+        width: 7vw;
+        height: 7vw;
+      }
+      #c1 {
+        background-color: red;
+        border-radius: 0 50% 50% 50%;
+      }
+      #c2 {
+        background-color: blue;
+        border-radius: 50% 0 50% 50%;
+      }
+      #c3 {
+        background-color: yellow;
+        border-radius: 50% 50% 50% 0;
+      }
+      #c4 {
+        background-color: rgb(0, 255, 0);
+        border-radius: 50% 50% 0 50%;
+      }
+      #cursor {
+        pointer-events: none;
+        height: 2rem;
+        width: 2rem;
+        background-color: aqua;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        transition: background-color ease 0.7s, transform ease 0.08s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cursor"></div>
+    <div id="rect">
+      <div class="circle-con">
+        <div id="c1" class="circle"></div>
+        <div id="c2" class="circle"></div>
+      </div>
+      <div class="circle-con">
+        <div id="c3" class="circle"></div>
+        <div id="c4" class="circle"></div>
+      </div>
+    </div>
+
+    <script>
+      const body = document.body;
+      const cursor = document.getElementById("cursor");
+      body.addEventListener("mousemove", (curDet) => {
+        cursor.style.transform = `translate(calc(${curDet.clientX}px - 50%),calc(${curDet.clientY}px - 50%))`;
+      });
+
+      const rect = document.getElementById("rect");
+      rect.addEventListener("mousemove", (curDet) => {
+        rectDet = rect.getBoundingClientRect();
+        var x = curDet.clientX - rectDet.x;
+        var y = curDet.clientY - rectDet.y;
+        if (x < rectDet.width / 2 && y < rectDet.height / 2) {
+          var redColor =
+            (getColorRange(x, 0, rectDet.width / 2) +
+              getColorRange(y, 0, rectDet.height / 2)) /
+            2;
+          rect.style.backgroundColor = `rgb(255,${redColor},${redColor})`;
+          cursor.style.backgroundColor = "#f00";
+          rect.style.boxShadow = `0px 0px ${getColorRange(
+            redColor,
+            255,
+            0,
+            15,
+            100
+          )}px rgb(255,${redColor},${redColor})`;
+        } else if (x > rectDet.width / 2 && y < rectDet.height / 2) {
+          var blueColor =
+            (getColorRange(x, rectDet.width, rectDet.width / 2) +
+              getColorRange(y, 0, rectDet.height / 2)) /
+            2;
+          rect.style.backgroundColor = `rgb(${blueColor},${blueColor},255)`;
+          cursor.style.backgroundColor = "#00f";
+          rect.style.boxShadow = `0px 0px ${getColorRange(
+            blueColor,
+            255,
+            0,
+            15,
+            100
+          )}px rgb(${blueColor},${blueColor},255)`;
+        } else if (x < rectDet.width / 2 && y > rectDet.height / 2) {
+          var yellowColor =
+            (getColorRange(x, 0, rectDet.width / 2) +
+              getColorRange(y, rectDet.height, rectDet.height / 2)) /
+            2;
+          rect.style.backgroundColor = `rgb(255,255,${yellowColor})`;
+          cursor.style.backgroundColor = "#ff0";
+          rect.style.boxShadow = `0px 0px ${getColorRange(
+            yellowColor,
+            255,
+            0,
+            15,
+            100
+          )}px rgb(255,255,${yellowColor})`;
+        } else {
+          var greenColor =
+            (getColorRange(x, rectDet.width, rectDet.width / 2) +
+              getColorRange(y, rectDet.height, rectDet.height / 2)) /
+            2;
+          rect.style.backgroundColor = `rgb(${greenColor},255,${greenColor})`;
+          cursor.style.backgroundColor = "#0f0";
+          rect.style.boxShadow = `0px 0px ${getColorRange(
+            greenColor,
+            255,
+            0,
+            15,
+            100
+          )}px rgb(${greenColor},255,${greenColor})`;
+        }
+      });
+
+      rect.addEventListener("mouseleave", () => {
+        rect.style.backgroundColor = "white";
+        cursor.style.backgroundColor = "aqua";
+        rect.style.boxShadow = `0px 0px 15px #fff`;
+      });
+
+      function getColorRange(x, x1, x2, y1 = 0, y2 = 255) {
+        var normalX = (x - x1) / (x2 - x1);
+        return y1 + normalX * (y2 - y1);
+      }
+    </script>
+  </body>
+</html>

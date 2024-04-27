@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style type="text/css">
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: #222;
+        color: #ddd;
+        font-family: cursive;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #cursor {
+        height: 20px;
+        width: 20px;
+        background-color: rgb(92, 255, 250);
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 100;
+        transition: all ease 0.06s;
+      }
+      #main {
+        height: 50px;
+        overflow: hidden;
+      }
+      .text {
+        font-size: 3rem;
+        font-weight: 900;
+        height: 50px;
+        z-index: 110;
+        transition: all ease 0.5s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #circle {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 0;
+        transition: all ease 0.3s;
+      }
+      #circle.active {
+        transform: scale(3);
+        background-color: rgb(94, 185, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cursor"></div>
+    <div id="circle"></div>
+    <div id="main">
+      <h1 id="text1" class="text">Namaste Ji!</h1>
+      <h1 id="text2" class="text">It's Raunak</h1>
+    </div>
+
+    <script type="text/javascript">
+      const cursor = document.getElementById("cursor");
+
+      document.body.addEventListener("mousemove", (e) => {
+        cursor.style.transform = `translate(calc(${e.clientX}px + -50%),calc(${e.clientY}px + -50%))`;
+      });
+
+      const main = document.getElementById("main");
+      const text = document.querySelectorAll(".text");
+      const circle = document.getElementById("circle");
+      main.addEventListener("mousemove", (e) => {
+        cursor.style.display = "none";
+        for (let i = 0; i < text.length; i++) {
+          text[i].style.transform = "translateY(-100%)";
+          text[i].style.color = "#222";
+        }
+        circle.classList.add("active");
+      });
+      main.addEventListener("mouseleave", () => {
+        cursor.style.display = "inline-block";
+        for (let i = 0; i < text.length; i++) {
+          text[i].style.transform = "translateY(0)";
+          text[i].style.color = "#ddd";
+        }
+        circle.classList.remove("active");
+      });
+    </script>
+  </body>
+</html>

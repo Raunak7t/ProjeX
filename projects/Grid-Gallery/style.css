@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 1.3rem;
+	font-family: 'Pacifico', cursive;
+	color: #ffffffdd;
+	text-shadow: 0px 0px 3px aqua;
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: linear-gradient(60deg , #000000, #10105099), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlQ0cyqz6hIP_xYEHoqsg0g_3rdRuR597PZw&usqp=CAU');
+	background-size: cover;
+}
+
+.left {
+	flex-basis: 30%;
+	text-align: center;
+}
+
+.right {
+	flex-basis: 50%;
+	display: grid;
+	gap: 5px;
+	grid-auto-rows: 18vh;
+	grid-template-columns: 1.5fr 1fr 1.2fr;
+}
+
+#img-box1 {
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo6_Koh0V_v9MPRz29mNtbqNrYUHmdPpnHDg&usqp=CAU');
+	grid-area: 1/1/1/3;
+	
+}
+
+#img-box2 {
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ3bYsucsQWDambYT8CMT7jotCmllPom9j4A&usqp=CAU');
+	grid-area: 1/3/3/4;
+	
+}
+
+#img-box3 {
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwjZBtt7A1IZjssfos51hOod8a75_Jvx4yLw&usqp=CAU');
+	grid-area: 4/1/5/3;
+	
+}
+
+#img-box4 {
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9xL8o_4YKqm-l8w4xExqeH0mzwn7BTog7DQ&usqp=CAU');
+	grid-area: 3/2/4/4;
+	
+}
+
+#img-box5 {
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSdXygk4UxAtpfB6gUbK2Nse6xOqlf8pxHEQ&usqp=CAU');
+	grid-area: 2/2/3/3;
+	
+}
+
+#img-box6 {
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvR5p4eVdkSZXwsI0axP6xCc1qId5Dr2O2bA&usqp=CAU');
+	grid-area: 2/1/4/2;
+	
+}
+
+#img-box7 {
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbvEnys5taMEQ_DDxQ82q7KazfCP4UwKqRHw&usqp=CAU');
+}
+
+.img-box {
+	background-size: cover;
+	background-position: left bottom;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #999;
+	background-blend-mode: color-burn;
+	transition: all 1s ease-in-out;
+}
+
+.img-box:hover {
+	background-color: #ddd;
+	text-shadow: 0px 0px 10px grey, 0px 0px 8px white, 0px 0px 5px aqua, 0px 0px 30px aqua;
+	background-position: center;
+	box-shadow: 0px 0px 17px 3px white, 0px 0px 8px 1px aqua;
+	font-size: 1.9rem;
+}
+
+/*media queries*/
+
+@media screen and (orientation: portrait) {
+	.container {
+		flex-direction: column;
+	}
+	.left {
+		flex-basis: auto;
+	}
+	.right {
+		width: 80vw;
+ 		grid-template-rows: repeat(4, 1fr);
+	}
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style type="text/css">
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #111;
+        line-height: 1.5rem;
+        color: #fff;
+      }
+      #main {
+        width: 70vw;
+        padding: 20px;
+        margin: 30px auto;
+        border-radius: 5px;
+        background-color: #222;
+      }
+      .container {
+        background-color: #333;
+        border-radius: 5px;
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .que {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .icon {
+        transition: all 0.3s;
+      }
+      .icon.active {
+        transform: rotate(180deg);
+      }
+      .ans {
+        margin: 10px;
+        margin-bottom: 0;
+        color: #ddd;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/4718b98a04.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="main">
+      <h1>FAQs</h1>
+      <div class="container">
+        <div class="que">
+          <h3>Click me.</h3>
+          <i class="fa-solid fa-caret-down icon"></i>
+        </div>
+        <div class="ans">
+          <p>There u go!</p>
+          <p>You got the dropdown.</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="que">
+          <h3>Heyy!</h3>
+          <i class="fa-solid fa-caret-down icon"></i>
+        </div>
+        <div class="ans">
+          <p>Love u</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="que">
+          <h3>How does the life works?</h3>
+          <i class="fa-solid fa-caret-down icon"></i>
+        </div>
+        <div class="ans">
+          <p>....Don't know....</p>
+          <p>Keep doing life.</p>
+          <p>Namaskaram.</p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const elements = document.querySelectorAll(".container");
+      elements.forEach((ele) => {
+        const icon = ele.querySelector(".icon");
+        const ans = ele.querySelector(".ans");
+        ele.addEventListener("click", () => {
+          if (icon.classList.contains("active")) {
+            icon.classList.remove("active");
+            ans.style.maxHeight = null;
+          } else {
+            icon.classList.add("active");
+            ans.style.maxHeight = ans.scrollHeight + "px";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

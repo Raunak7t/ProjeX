@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+body {
+  background: linear-gradient(to top left, rgb(12, 10, 33), rgb(41, 5, 41));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 70vmin;
+  height: 80vmin;
+  padding: 2vmin;
+  background-color: aqua;
+  border-radius: 2vmin;
+}
+
+.pp {
+  height: 100%;
+  width: 100%;
+}
+
+#playground {
+  background-color: rgb(7, 39, 49);
+  border-radius: 1vmin;
+  position: relative;
+}
