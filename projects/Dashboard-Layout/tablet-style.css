@@ -1,0 +1,85 @@
+@media screen and (max-width: 992px) {
+  .main-container {
+    grid-template-columns: 5rem auto 18rem;
+    gap: 3rem;
+  }
+
+  .logo h3 {
+    display: none;
+  }
+  .nav-link h5 {
+    display: none;
+  }
+
+  .insights {
+    grid-template-columns: 1fr;
+  }
+  .orders {
+    position: absolute;
+    width: 80vw;
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 698px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    width: 90vw;
+    padding-bottom: 3rem;
+  }
+  aside {
+    position: fixed;
+    left: -14rem;
+    z-index: 100;
+    width: 14rem;
+    background-color: var(--primary-bg-color);
+  }
+  span.close-menu {
+    display: inline-block;
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+  }
+  .logo h3 {
+    display: block;
+  }
+  .nav-link h5 {
+    display: inline;
+  }
+
+  main {
+    margin-top: 4rem;
+  }
+
+  .orders {
+    position: relative;
+    width: 100%;
+    padding-bottom: 0rem;
+  }
+  .orders table tr th:first-child,
+  .orders table tr th:last-child,
+  .orders table tr td:first-child,
+  .orders table tr td:last-child {
+    display: none;
+  }
+
+  .right-aside .top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    padding: 0.5rem;
+    width: 100%;
+    background: var(--primary-bg-color);
+    box-shadow: var(--box-shadow);
+  }
+  .right-aside .top .name {
+    display: none;
+  }
+  .right-aside .menu {
+    display: inline;
+    position: absolute;
+    left: 0.9rem;
+    font-size: 2rem;
+  }
+}

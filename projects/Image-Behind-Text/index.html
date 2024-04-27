@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+:root{
+	--bg-color: #ccd;
+	--text-color: #222;
+}
+#main{
+	height: 100vh;
+	width: 100vw;
+	background-color: var(--bg-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: none;
+}
+#cursor{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	transform: translate(-50%,-50%);
+	height: 1.5rem;
+	width: 1.5rem;
+	border-radius: 50%;
+	transition: all linear 0.1s;
+	border: 7px dashed #333;
+}
+.text{
+	z-index: 2;
+	padding: 1rem;
+	height: 10rem;
+	display: flex;
+	align-items: center;
+}
+.text h1{
+	-webkit-text-stroke: 3px var(--text-color);
+	color: white;
+	font-size: 4rem;
+	font-weight: 900;
+	mix-blend-mode: difference;
+}
+.text img{
+	position: absolute;
+	height: 5rem;
+	width: 5rem;
+	transform: translate(-50%,-50%) scale(0);
+	opacity: 0;
+	object-fit: cover;
+	border-radius: 50%;
+	pointer-events: none;
+	transition: all ease .5s;
+	z-index: -10;
+}
+</style>
+</head>
+<body>
+	<div id="main">
+		<div id="cursor"></div>
+		<div class="text" id="text1">
+			<h1>Namaste!</h1>
+			<img src="https://i.pinimg.com/originals/39/02/65/390265a5fc95103c9aac970ce291943a.gif" alt="1">
+		</div>
+		<div class="text" id="text1">
+			<h1>I'm</h1>
+			<img src="https://www.icegif.com/wp-content/uploads/cool-wallpapers-icegif.gif" alt="2">
+		</div>
+		<div class="text" id="text1">
+			<h1>Raunak</h1>
+			<img src="https://gifdb.com/images/high/colorful-galaxy-and-planet-wallpaper-w3xdft4zs5e3hsbh.gif" alt="3">
+		</div>
+	</div>
+	
+<script type="text/javascript">
+
+var main = document.getElementById('main');
+var cursor = document.getElementById('cursor');
+main.addEventListener("mousemove",function (dets) {
+	cursor.style.left = dets.x + "px";
+	cursor.style.top = dets.y + "px";
+	let rotateVal = dets.x + dets.y;
+	cursor.style.transform = `rotate(${rotateVal}deg)`;
+})
+var textboxes = document.querySelectorAll(".text");
+textboxes.forEach(function (textbox) {
+	textbox.addEventListener("mousemove", function (dets) {
+		var img = textbox.querySelector("img");
+		img.style.transform = "translate(-50%,-50%) scale(3)";
+		img.style.opacity = "1";
+		img.style.left = dets.x + "px";
+		img.style.top = dets.y + "px";
+		cursor.style.display = "none";
+		
+	});
+	textbox.addEventListener("mouseleave", function () {
+		var img = textbox.querySelector("img");
+		img.style.transform = "translate(-50%,-50%) scale(0)";
+		cursor.style.display = "initial";
+		img.style.opacity = "0";
+	});
+});
+</script>
+</body>
+</html>

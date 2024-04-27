@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Labrada&display=swap');
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: 'Labrada', monospace;
+}
+
+.outer-box{
+	height: 100vh;
+	width: 100vw;
+	background: linear-gradient(to top left, #3bebe5, #74b1f2);
+	position: fixed;
+	overflow: auto;
+}
+
+.inner-box{
+	width: 50vw;
+	background: linear-gradient(to top right, #ffffffaa, #ffffff44);
+	margin: 0 auto;
+	position: relative;
+	top: 15%;
+	padding: 20px 30px;
+	border-radius: 15px;
+	box-shadow: 1px 1px 8px black;
+	z-index: 3;
+	backdrop-filter: blur(5px);
+}
+
+.signup-header h1{
+	font-size: 2.5rem;
+	color: #333;
+}
+
+.signup-header p{
+	font-size: 0.9rem;
+	color: #555;
+	margin: 4px 0;
+}
+
+.signup-body{
+	margin: 20px 0>px;
+}
+
+.signup-body p{
+	margin: 10px 0px;
+}
+
+.signup-body p label{
+	display: block;
+	font-weight: bold;
+}
+
+.signup-body p input{
+	width: 100%;
+	padding: 5px;
+	border: 2px solid #aaa;
+	border-radius: 5px;
+	margin-top: 3px;
+	font-size: 1rem;
+}
+
+.signup-body p input[type=submit]{
+	background: linear-gradient(to top left, #74b1f2, #3bebe5);
+	border: none;
+	color: white;
+	text-shadow: 0px 0px 3px black;
+	font-size: 1.2rem;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.signup-body p input[type=submit]:hover{
+	background: linear-gradient(to top left, #5491d2, #1bcbc5);
+}
+
+.signup-footer p{
+	color: #555;
+	text-align: center;
+}
+
+.signup-footer p a{
+	color:  #3471c2;
+}
+
+.circle{
+	width: 25vw;
+	height: 25vw;
+	background: linear-gradient(to top right, #ffffff22, white);
+	border-radius: 50%;
+	position: fixed;
+}
+.c1{
+	top: 10vh;
+	left: 10vw;
+}
+.c2{
+	bottom: 10vh;
+	right: 10vw;
+}

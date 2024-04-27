@@ -1,0 +1,59 @@
+/*for mobiles*/
+
+@media screen and (orientation: portrait)
+{	
+	
+	.nav-toggle {
+		display: block;
+	}
+	.nav-links {
+//		display: none;
+		position: absolute;
+		flex-direction: column;
+		gap: 2rem;
+		background-color: var(--secondary-bg-color);
+		left: -100%;
+		top: 100%;
+		width: 70%;
+		height: 100vh;
+		padding-block: 2rem;
+		transition: 0.3s ease-in-out;
+	}
+	.active {
+		left: 0;
+	}
+	nav {
+//		position: relative;
+	}
+	
+	.hero {
+		flex-direction: column-reverse;
+		gap: 2rem;
+		
+	}
+	.hero-img {
+		width: 70%;
+	}
+	
+	.feature-card {
+		width: 40%;
+	}
+	
+	.examples-area {
+		flex-direction: column;
+		gap: 2rem;
+	}
+	.example-card {
+		width: 85%;
+		min-height: 12rem;
+	}
+	
+	.footer {
+		align-items: center;
+		gap: 2rem;
+		flex-direction: column;
+	}
+	.fsec {
+		align-items: center;
+	}
+}

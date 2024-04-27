@@ -1,0 +1,366 @@
+:root {
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #cdcdcd;
+  --primary-bg-color: #2f303d;
+  --secondary-bg-color: #151523;
+  --tertiary-bg-color: #090918;
+  --accent-color: #20cede;
+  --accent-color-2: #fe83c1;
+  --accent-color-3: #5ad192;
+  --box-shadow: 5px 5px 30px #000000dc;
+}
+.light {
+  --primary-text-color: #1b1b1b;
+  --secondary-text-color: #4d4d4d;
+  --primary-bg-color: #ffffff;
+  --secondary-bg-color: #f6f6f6;
+  --tertiary-bg-color: #e6e6e6;
+  --box-shadow: 5px 5px 30px #00000056;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+
+  transition: all ease 0.2s;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--secondary-bg-color);
+  color: var(--primary-text-color);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-text-color);
+}
+small {
+  font-size: 0.7rem;
+  color: var(--secondary-text-color);
+}
+.success {
+  color: var(--accent-color-3);
+}
+.failure {
+  color: var(--accent-color-2);
+}
+.pending {
+  color: var(--accent-color);
+}
+
+.main-container {
+  width: 96vw;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 10rem auto 16rem;
+}
+
+aside {
+  height: 100vh;
+}
+span.close-menu {
+  display: none;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.logo img {
+  height: 1.5rem;
+  width: 1.5rem;
+  background: var(--accent-color-2);
+  border-radius: 0.5rem;
+}
+.logo span {
+  color: var(--accent-color-2);
+}
+
+.nav-links {
+  margin-top: 1rem;
+  height: 80%;
+  position: relative;
+}
+.nav-link {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-left: 0.7rem;
+  padding-left: 1.4rem;
+  height: 2.6rem;
+  transition: all ease 0.2s;
+}
+.nav-link:last-child {
+  margin-top: 4rem;
+}
+.nav-link:hover {
+  padding-left: 2.3rem;
+  scale: 1.1;
+}
+.nav-link.active {
+  background-color: var(--tertiary-bg-color);
+  border-left: 6px solid var(--accent-color);
+  color: var(--primary-text-color);
+}
+.nav-link.active:hover {
+  padding-left: 1.4rem;
+  scale: 1;
+}
+.msg-count {
+  font-size: 0.8rem;
+  background-color: var(--accent-color-2);
+  padding: 0.1rem 0.6rem;
+  border-radius: 0.3rem;
+  color: var(--primary-bg-color);
+}
+
+main .heading-date {
+  margin-top: 1.3rem;
+}
+.heading-date .date {
+  margin-top: 0.7rem;
+  padding: 0.3rem 1.3rem;
+  background-color: var(--tertiary-bg-color);
+  width: fit-content;
+}
+.date input[type="date"] {
+  font-size: 0.8rem;
+  background-color: transparent;
+  color: var(--primary-text-color);
+  border: none;
+}
+
+.insights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.expenses {
+  --accent-color: var(--accent-color-2);
+}
+.income {
+  --accent-color: var(--accent-color-3);
+}
+.insight-card {
+  background-color: var(--primary-bg-color);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+}
+.insight-card:hover {
+  box-shadow: none;
+}
+.insight-card .left span {
+  background-color: var(--accent-color);
+  padding: 0.5rem;
+  border-radius: 99px;
+  margin-bottom: 1rem;
+}
+.insight-card .left h3 {
+  margin-block: 0.4rem 1rem;
+}
+.insight-card .right {
+  position: relative;
+}
+.insight-card .right svg {
+  width: 5rem;
+  height: 5rem;
+}
+svg circle {
+  fill: none;
+  transform: translate(8px, 10px);
+  stroke-width: 10px;
+  stroke: var(--accent-color);
+  stroke-linecap: round;
+  stroke-dasharray: 190;
+  stroke-dashoffset: 60;
+}
+.insight-card .right p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--secondary-text-color);
+}
+.expenses circle {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 90;
+}
+.income circle {
+  stroke-dasharray: 90;
+  stroke-dashoffset: 10;
+}
+
+.orders h3 {
+  margin-top: 2rem;
+}
+.orders table {
+  background-color: var(--primary-bg-color);
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-block: 1rem 0.5rem;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  font-size: 0.9rem;
+}
+.orders table:hover {
+  box-shadow: none;
+}
+.orders tbody td {
+  border-bottom: 0.2px solid var(--secondary-text-color);
+  color: var(--secondary-text-color);
+  padding: 11px;
+  font-size: 0.7rem;
+}
+.orders tbody tr:last-child td {
+  border: none;
+  padding-bottom: 0;
+}
+.orders .show-all {
+  text-align: center;
+  display: block;
+}
+.show-all small {
+  color: var(--accent-color);
+}
+
+.right-aside .top {
+  margin-top: 1rem;
+  text-align: right;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 2rem;
+}
+.right-aside .menu {
+  display: none;
+}
+.right-aside .theme {
+  background-color: var(--accent-color);
+  padding: 0.3rem 0.5rem;
+  border-radius: 4rem;
+  position: relative;
+  box-shadow: var(--box-shadow);
+}
+.theme span {
+  font-size: 1.2rem;
+  color: var(--primary-text-color);
+  mix-blend-mode: difference;
+}
+.light .theme span {
+  mix-blend-mode: multiply;
+}
+.theme .circle {
+  position: absolute;
+  background-color: var(--primary-bg-color);
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 0.2rem;
+  left: 1.8rem;
+}
+.light .circle {
+  left: 0.4rem;
+}
+
+.right-aside .user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.dp {
+  overflow: hidden;
+  height: 2.3rem;
+  width: 2.3rem;
+  border-radius: 50%;
+}
+.dp img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.right-aside .updates {
+  margin-top: 2rem;
+}
+.updates .card {
+  margin-top: 1rem;
+  background-color: var(--primary-bg-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+}
+.updates .card:hover {
+  box-shadow: none;
+}
+.updates .card .update {
+  display: grid;
+  grid-template-columns: 2.5rem auto;
+  gap: 1rem;
+  padding-block: 0.5rem;
+}
+.update span {
+  color: var(--primary-text-color);
+}
+.update p {
+  margin-top: 0.4rem;
+  font-size: 0.65rem;
+}
+
+.analytics {
+  margin-top: 2rem;
+}
+.analytics .card {
+  margin-top: 0.7rem;
+  border-radius: 1rem;
+  background-color: var(--primary-bg-color);
+  padding: 0.7rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 0.6rem;
+  box-shadow: var(--box-shadow);
+}
+.analytics .card:hover {
+  box-shadow: none;
+}
+.analytics .card span {
+  background-color: var(--accent-color-2);
+  padding: 0.5rem;
+  border-radius: 99px;
+}
+.analytics .card:nth-child(3) span {
+  background-color: var(--accent-color-3);
+}
+
+.right-aside .add-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 0.7rem;
+  border-radius: 1rem;
+  text-shadow: 0 0 15px var(--tertiary-bg-color);
+  border: 2px dashed var(--accent-color);
+  color: var(--accent-color);
+  background-color: transparent;
+}
+.right-aside .add-product:hover {
+  box-shadow: var(--box-shadow);
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
+}

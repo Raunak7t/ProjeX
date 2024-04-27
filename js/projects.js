@@ -12,7 +12,13 @@ let projects = [
     desc: "It is a simple portfolio type view with amazing image effect.",
   },
   {
-    name: "Rim-Rush",
+    name: "Image-Behind-Text",
+    liveSrc: "Image-Behind-Text",
+    codeSrc: "",
+    desc: "It is an amazing effect on hovering on the text.",
+  },
+  {
+    name: "RimRush",
     liveSrc: "RimRush",
     codeSrc: "",
     desc: "This is a game inspired from flappy but, but now its more playable.",
@@ -28,6 +34,48 @@ let projects = [
     liveSrc: "Calci",
     codeSrc: "",
     desc: "It is a calculator app made using javascript.",
+  },
+  {
+    name: "Your-Name-Poster",
+    liveSrc: "Your-Name-Poster",
+    codeSrc: "",
+    desc: "A landing page poster design.",
+  },
+  {
+    name: "Number-Guess-Game",
+    liveSrc: "Number-Guess-Game",
+    codeSrc: "",
+    desc: "It is an amazing number guressing game, must try.",
+  },
+  {
+    name: "Insta-Home-Clone",
+    liveSrc: "Insta-Home-Clone",
+    codeSrc: "",
+    desc: "The popular Instagram home screen clone.",
+  },
+  {
+    name: "Paralax",
+    liveSrc: "Paralax",
+    codeSrc: "",
+    desc: "A landing page with paralax effect.",
+  },
+  {
+    name: "ProWeb",
+    liveSrc: "ProWeb",
+    codeSrc: "",
+    desc: "A professional looking sample homepage design.",
+  },
+  {
+    name: "DashBoard-Layout",
+    liveSrc: "DashBoard-Layout",
+    codeSrc: "",
+    desc: "A professional looking admin dashboard page design. It is completely responsive.",
+  },
+  {
+    name: "Glassmorphic-Form",
+    liveSrc: "Glassmorphic-Form",
+    codeSrc: "",
+    desc: "A professional looking Glassmorphic effect form design.",
   },
 ];
 
