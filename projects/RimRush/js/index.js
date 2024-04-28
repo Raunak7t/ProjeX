@@ -35,6 +35,7 @@ function updateFrame(time) {
   var delta = time - lastTime;
   updateChar(delta);
   updateObstacle(delta);
+  showScore();
 
   var insideObs = getObsRect().some((obsRect) => {
     return isCollision(getCharRect(), obsRect);
@@ -62,6 +63,7 @@ async function gameStart(charImg) {
   setupObstacles();
   let gameStartTimer = 3;
   let timerPromise = new Promise((res, rej) => {
+    document.querySelector("#score h1").innerHTML = score();
     msg.innerHTML = `<h2>Game starts in :</h2><h1>-</h1>`;
     let intervalVar = setInterval(() => {
       msg.innerHTML = `<h2>Game starts in :</h2><h1>${gameStartTimer}</h1>`;
@@ -75,6 +77,10 @@ async function gameStart(charImg) {
   await timerPromise;
   msg.classList.add("hidden");
   window.requestAnimationFrame(updateFrame);
+}
+
+function showScore() {
+  document.querySelector("#score h1").innerHTML = score();
 }
 
 function checkLoose() {

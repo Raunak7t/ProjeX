@@ -54,8 +54,8 @@ function createObstacle() {
   obstacle.style.setProperty(
     "--gap-top",
     getRandomNumberBetween(
-      GAP_HEIGHT * 1.5,
-      window.innerHeight - GAP_HEIGHT * 0.5
+      GAP_HEIGHT * 1.3,
+      window.innerHeight - GAP_HEIGHT * 0.3
     )
   );
   const obsLeft = {

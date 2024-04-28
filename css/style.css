@@ -9,8 +9,6 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --accent1: #8ad5fd;
   --accent2: #ee89fe;
-  --accent1t: #8ad5fd36;
-  --accent2t: #ee89fe36;
 }
 
 /* presets */
@@ -30,11 +28,11 @@ body {
 
 *::-webkit-scrollbar {
   width: 12px;
-  background-color: var(--bg3);
+  background-color: var(--bg1);
   border-radius: 20px;
 }
 *::-webkit-scrollbar-thumb {
-  border: 3px solid var(--bg3);
+  border: 3px solid var(--bg2);
   border-radius: 20px;
   background: linear-gradient(-93deg, var(--accent1), var(--accent2));
 }
@@ -103,7 +101,7 @@ section .container {
 /* project list  */
 
 .project-list {
-  background: linear-gradient(-65deg, var(--accent1t), var(--accent2t));
+  background-color: var(--bg3);
   width: 23%;
   border-radius: 15px;
   padding: 5px;
@@ -179,6 +177,7 @@ section .container {
 .frame-con iframe {
   width: 100%;
   height: 100%;
+  background-color: white;
 }
 
 .details {
@@ -203,7 +202,7 @@ section .container {
   color: transparent;
   background-clip: text;
   width: fit-content;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 0.5px white;
   padding-bottom: 5px;
   overflow: hidden;
   text-wrap: nowrap;
