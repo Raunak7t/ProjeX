@@ -32,6 +32,12 @@ let projects = [
     desc: "This is a game inspired from classic block breaker or brick-breaker but, but now its more playable.",
   },
   {
+    name: "Bubble-Popper",
+    liveSrc: "Bubble-Popper",
+    codeSrc: "https://github.com/Raunak7t/Bubble-Popper",
+    desc: "This is a game inspired from classic block breaker or brick-breaker but, but now its more playable.",
+  },
+  {
     name: "Calci",
     liveSrc: "Calci",
     codeSrc: "https://github.com/Raunak7t/ProjeX/tree/main/projects/Calci",
