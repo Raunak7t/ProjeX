@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #000;
+      }
+      .cube {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        animation: animate 2s linear infinite;
+      }
+      @keyframes animate {
+        0% {
+          transform: rotateX(-30deg) rotateY(0deg);
+        }
+        100% {
+          transform: rotateX(-30deg) rotateY(360deg);
+        }
+      }
+      .cube div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform-style: preserve-3d;
+      }
+      .cube div span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(#222, aqua);
+        transform: rotateY(calc(90deg * var(--i))) translateZ(100px);
+      }
+      .top {
+        background: #333;
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotateX(90deg) translateZ(100px);
+      }
+      .top::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 200px;
+        width: 200px;
+        background: aqua;
+        transform: translateZ(-250px);
+        filter: blur(20px);
+        box-shadow: 0 0 10px aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cube">
+      <div class="top"></div>
+      <div>
+        <span style="--i: 0"></span>
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+      </div>
+    </div>
+  </body>
+</html>

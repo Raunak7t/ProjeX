@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      .main {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #222;
+      }
+      .model {
+        height: 200px;
+        width: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: animate 2s linear infinite;
+      }
+      .side {
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(#112222, #00ffffee);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotateY(calc(120deg * var(--i))) translateZ(57px);
+        opacity: 1;
+        transform-style: preserve-3d;
+      }
+      .side::before {
+        content: "";
+        height: 10%;
+        width: 100%;
+        background: aqua;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(240px) rotateX(90deg);
+        filter: blur(7px);
+        box-shadow: 0px 0px 70px 14px aqua;
+      }
+      @keyframes animate {
+        0% {
+          transform: rotateX(-30deg) rotateY(0deg);
+        }
+        100% {
+          transform: rotateX(-30deg) rotateY(-360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="model">
+        <div class="side" style="--i: 0"></div>
+        <div class="side" style="--i: 1"></div>
+        <div class="side" style="--i: 2"></div>
+      </div>
+    </div>
+  </body>
+</html>

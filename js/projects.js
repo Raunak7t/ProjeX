@@ -65,6 +65,25 @@ let projects = [
     desc: "The popular Instagram home screen clone.",
   },
   {
+    name: "Prism-3d-Pro",
+    liveSrc: "Prism-3d-Pro",
+    codeSrc:
+      "https://github.com/Raunak7t/ProjeX/tree/main/projects/Prism-3d-Pro",
+    desc: "Move the cursor over the 3d triangle. This is an interactive 3d object created with just CSS.",
+  },
+  {
+    name: "Prism-3d",
+    liveSrc: "Prism-3d",
+    codeSrc: "https://github.com/Raunak7t/ProjeX/tree/main/projects/Prism",
+    desc: "A beautiful 3d object.",
+  },
+  {
+    name: "Cube-3d",
+    liveSrc: "Cube-3d",
+    codeSrc: "https://github.com/Raunak7t/ProjeX/tree/main/projects/Cube-3d",
+    desc: "A beautiful 3d cube floating.",
+  },
+  {
     name: "Paralax",
     liveSrc: "Paralax",
     codeSrc: "https://github.com/Raunak7t/ProjeX/tree/main/projects/Paralax",

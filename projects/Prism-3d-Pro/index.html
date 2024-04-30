@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      .main {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #222;
+      }
+      .model {
+        height: 200px;
+        width: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: rotateX(-30deg) rotateY(40deg);
+        transition: all 1s ease-out;
+      }
+      .side {
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(#112222, #00ffffee);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotateY(calc(120deg * var(--i))) translateZ(57px);
+        transform-style: preserve-3d;
+      }
+      .side::before {
+        content: "";
+        height: 10%;
+        width: 100%;
+        background: aqua;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(240px) rotateX(90deg);
+        filter: blur(7px);
+        box-shadow: 0px 0px 70px 14px aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="model" id="model">
+        <div class="side" style="--i: 0"></div>
+        <div class="side" style="--i: 1"></div>
+        <div class="side" style="--i: 2"></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const model = document.querySelector(".model");
+      var triDets = model.getBoundingClientRect();
+      var xRange = [triDets.x, triDets.x + triDets.width];
+      var yRange = [triDets.y, triDets.y + triDets.height];
+      model.addEventListener("mousemove", function (dets) {
+        var xDeg = reMap(dets.x, xRange, [0, 180]);
+        var yDeg = reMap(dets.y, yRange, [0, 60]);
+        model.style.transform =
+          "rotateX(-" + yDeg + "deg) rotateY(" + xDeg + "deg)";
+      });
+      function reMap(value, initialRange, newRange) {
+        const normalVal =
+          (value - initialRange[0]) / (initialRange[1] - initialRange[0]);
+        return (newValue =
+          (normalVal + newRange[0]) * (newRange[1] - newRange[0]));
+      }
+    </script>
+  </body>
+</html>
